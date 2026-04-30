@@ -1,84 +1,84 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Joel</title>
+  <title>Ashton & Robert Submission</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style type="text/css">
-    html,
-    body {
-      background: transparent;
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    #overlay-container {
-      width: 960px;
-      height: 540px;
-    }
-
-    /* Your style here... (feel free to remove this example styling) */
-    #skip {
-      display: none; /* Hidden until ad starts */
-      position: absolute;
-      bottom: 60px;
-      right: 0;
-      padding: 10px 18px;
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid black;
-      border-right-width: 0;
-      font-size: 1.2rem;
-      border-radius: 4px 0 0 4px;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/survey.css">
 </head>
 
 <body>
   <div id="overlay-container">
-    <!-- We've added a sample button. Feel free to remove it: -->
-    <button id="skip">
+
+    <div id="buffer-container" class="hidden">
+      <div id="spinner"></div>
+      <div id="buffering-text">Buffering...</div>
+    </div>
+
+    <button id="skip" type="button" disabled>
       Skip Ad...
     </button>
   </div>
 
-  <script type="text/javascript">
-    (function(window, document){
-      // This is how you tell the parent window that the ad was successfully skipped.
-      function adSuccess() {
-        window.top.postMessage({ type: 'success' }, '*');
-      }
+  <div id="survey-container" class="hidden">
+    <div id="survey-inner">
+      <div id="survey-header">
+        Complete this survey to skip the video
+        <br>
+      </div>
+      <div id="survey-error" class="hidden">
+        Error
+      </div>
+      <div id="star-question" class="survey-question"> 
+        <div>
+          Please rate the ad.
+        </div>
+        <div id="stars" style="display: flex; gap: .2rem;"> 
+          <div class="star">★</div>
+          <div class="star">★</div>
+          <div class="star">★</div>
+          <div class="star">★</div>
+          <div class="star">★</div>
+        </div>
+      </div>
+      <div>
+      <div id="essay1-question" class="hidden">
+        <div>
+          Thanks for leaving 5 stars! Let us know what you like about the advertisement.
+        </div>
+        <div>
+          <textarea id="essay1-text" required></textarea>
+          <button id="next-question">Next Question</button>      </div>
+      </div>
+      <div id="essay2-question" class="hidden">
+        <div>
+          How does this advertisement relate to you?
+        </div>
+        <div>
+          <textarea id="essay2-text" required></textarea>
+          <button id="next-question">Next Question</button> 
+       </div>
+      </div>
+      <div id="survey-end" class="hidden">
+        <div>
+          Thank you for completing the survey. Please verify you're a human.
+        </div>
+        <div>
+          <button id="next-question">Verify</button> 
+       </div>
+      </div>
+    </div>
+  </div>
 
-      const skipButton = document.getElementById('skip');
-
-      // Listen for messages from the game shell
-      window.addEventListener('message', (event) => {
-        if (!event.data || !event.data.type) return;
-
-        if (event.data.type === 'adStarted') {
-          // Show the skip button when the ad starts
-          skipButton.style.display = 'block';
-        }
-
-        // By default, if the user doesn't "skip" the ad before the video ends,
-        // we call fail to restart. You're welcome to replace this with a survey
-        // or other interaction instead (see examples/survey).
-        if (event.data.type === 'adFinished') {
-          skipButton.style.display = 'none';
-          window.top.postMessage({ type: 'fail' }, '*');
-        }
-      });
-
-      // Your ad overlay code goes here, we've added a simple example below:
-      skipButton.addEventListener('click', () => {
-        skipButton.style.display = 'none';
-        adSuccess();
-      });
-
-    })(window, document);
-  </script>
 </body>
+
 </html>
+
+<script src="scripts/index.js"></script>
+<script src="scripts/captcha.js"></script>
+<script src="scripts/negative.js"></script>
+<script src="scripts/survey.js"></script>
+<script src="scripts/buffer.js"></script>

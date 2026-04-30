@@ -13,7 +13,9 @@ https://kitboga.com/codejam26
 		*  rank this ad from 1 - 5 stars!
 			* no matter what they click, it becomes 5 stars
 		* We see you loved this ad! Please tell us more about it!
-			* 200 word minimum
+			* 200 word exactly
+		* How relatable is this?
+			* 100 word exactly
 		* Click on where the dog would be happiest!
 			* all pictures of dog parks, completely subjective 
 		* Click on where the cat would be happiest!
@@ -27,3 +29,8 @@ https://kitboga.com/codejam26
  * Loading bar: whenever we finish the annoying UX, we have a bar which will attempt to load, which never finishes.
  * If they watch the whole ad: we make it buffer at like 9:45 will buffer to 9:55 and stop.
 	
+
+
+TODO: 
+	- Implement a warning message into the essay attempts: "Hey you are about to hit your word limit!", if he doesn't hit exactly that said amount of words, then refresh the page as well.
+	- 
