@@ -15,7 +15,7 @@ const tickTimer = () => {
     if (skipTimer <= 0 && !notSkippingThisTime) {
         if (checkCanPass()) {
             document.getElementById("skip").textContent = "Skip by taking short survey";
-            document.getElementById("skip").removeAttribute("disabled")
+            document.getElementById("skip").removeAttribute("disabled");
             return;
         }
     }

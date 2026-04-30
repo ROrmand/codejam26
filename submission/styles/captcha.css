@@ -1,0 +1,38 @@
+#captcha-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#captcha-inner {
+    background-color: white;
+    transition: transform 0.3s ease-in-out
+}
+#captcha-inner.state1 {
+    padding: 1rem;
+    width: 25%;
+    height: 10%;
+    display: flex;
+}
+
+#captcha-inner.state2 {
+    padding: 1rem;
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    display: flex;
+}
+
+.captcha-clickarea {
+    width: 2rem;
+    height: 2rem;
+    background-color: gray;
+    border: 1px solid black;
+
+}
