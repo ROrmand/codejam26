@@ -45,6 +45,32 @@ document.getElementById("next-question").addEventListener("click", () => {
 
     if (surveyStep === 3) {
         document.getElementById("survey-container").classList.add("hidden");
+        document.getElementById("captcha-inner").classList.remove("hidden");
+        document.getElementById("captcha-container").classList.remove("hidden");
+    }
+    
+})
+
+document.getElementById("next-question2").addEventListener("click", () => {
+    if (surveyStep === 2) {
+        const textArea = document.getElementById("essay2-text");
+
+        if(!validateWords(textArea, 100)) {
+            return;
+        }
+    
+        surveyStep = 3;
+        document.getElementById("essay2-question").classList.add("hidden");
+        document.getElementById("survey-end").classList.remove("hidden");
+        document.getElementById("survey-error").classList.add("hidden");
+    }
+})
+
+document.getElementById("next-question3").addEventListener("click", () => {
+    if (surveyStep === 3) {
+        document.getElementById("survey-container").classList.add("hidden");
+        document.getElementById("captcha-inner").classList.remove("hidden");
+        document.getElementById("captcha-container").classList.remove("hidden");
     }
     
 })

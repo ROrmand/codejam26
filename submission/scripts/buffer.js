@@ -10,7 +10,6 @@ const scheduleBuffer = (totalLength) => {
     bufferScheduled = true;
 
     let randomOffset = Math.floor(Math.random() * 5) + 1;
-    console.log("Scheduling for " + (totalLength - randomOffset) + " seconds")
     setTimeout(startBuffering, ((totalLength - randomOffset)) * 1000);
 }
 

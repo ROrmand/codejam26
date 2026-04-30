@@ -1,4 +1,4 @@
-let skipTimer = 10;
+let skipTimer = 30;
 let notSkippingThisTime = false;
 
 const checkCanPass = () => {

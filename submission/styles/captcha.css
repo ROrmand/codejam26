@@ -24,8 +24,8 @@
 #captcha-inner.state2 {
     padding: 1rem;
     background-color: white;
-    width: 35%;
-    height: 50%;
+    width: 40%;
+    height: 70%;
     display: flex;
 }
 
@@ -35,4 +35,28 @@
     background-color: gray;
     border: 1px solid black;
 
+}
+
+ canvas {
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: crosshair;
+    touch-action: none;
+    width: 100%;
+
+}
+
+.controls {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#captcha-error {
+    color: green;
+}
+
+#captcha-error.failed {
+    color: red !important;
 }

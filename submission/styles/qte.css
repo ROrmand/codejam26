@@ -1,0 +1,26 @@
+#red-flash {
+  position: fixed;
+  inset: 0;                
+  background: red;
+  opacity: 0;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+}
+
+#red-flash {
+  animation: redFlash 2000ms ease-out infinite;
+}
+
+@keyframes redFlash {
+  0%   { opacity: 0; }
+  30%  { opacity: 0.65; }
+  100% { opacity: 0; }
+}
+
+#qte-hitbox {
+  background: grey;
+  width: 120px;
+  height: 60px;
+  cursor: pointer;
+}

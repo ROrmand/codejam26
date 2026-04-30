@@ -23,18 +23,17 @@
 
 
 #stars {
-    color: gray;
+    color: gray !important;
 }
 
 #stars:has(.star:hover) {
-    color: gold;
+    color: gold !important;
 }
 
 .star {
     cursor: pointer;
 }
 
-
 .star:hover {
-    color: gray;
+    color: gray !important;
 }
